@@ -2,11 +2,17 @@
   "name": "budaya-indonesia",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "ANALYZE=true next build",
+    "dev": "npm run format && next dev -p 8000",
+    "start": "npm run format && next start -p 3000",
+    "format": "prettier --write . && next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -19,7 +25,14 @@
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.64.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.0"
   }
 }
