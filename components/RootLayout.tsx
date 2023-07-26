@@ -8,15 +8,16 @@ import React, {
   useState,
 } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 import { usePathname } from 'next/navigation';
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 
+import Logo from '@/images/logo.png';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
-import Image from 'next/image';
 
 const RootLayoutContext = createContext({});
 
@@ -62,7 +63,7 @@ function Header({
     <Container>
       <div className="flex items-center justify-between">
         <Link href="/" aria-label="Home">
-          <Image width={80} height={80} src="/logos.png" alt="" />
+          <Image height={120} width={120} src={Logo} alt="" />
         </Link>
         <div className="flex items-center gap-x-8">
           <Button
@@ -133,12 +134,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/budaya">Budaya</NavigationItem>
+        <NavigationItem href="/seni">Seni & Kriya</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="/fesyen">Fesyen</NavigationItem>
+        <NavigationItem href="/kuliner">Kuliner</NavigationItem>
       </NavigationRow>
     </nav>
   );
