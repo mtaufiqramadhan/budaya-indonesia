@@ -8,6 +8,7 @@ import React, {
   useState,
 } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 import { usePathname } from 'next/navigation';
@@ -16,7 +17,6 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
-import Image from 'next/image';
 
 const RootLayoutContext = createContext({});
 
@@ -61,7 +61,7 @@ function Header({
   return (
     <Container>
       <div className="flex items-center justify-between">
-        <Link href="/" aria-label="Home">
+        <Link href="/">
           <Image width={80} height={80} src="/logos.png" alt="" />
         </Link>
         <div className="flex items-center gap-x-8">
@@ -75,13 +75,10 @@ function Header({
             ref={toggleRef}
             type="button"
             onClick={onToggle}
-            aria-expanded={expanded}
-            aria-controls={panelId}
             className={clsx(
               'group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10'
             )}
-            aria-label="Toggle navigation"
           >
             <Icon
               className={clsx(
@@ -176,10 +173,7 @@ function RootLayoutInner({ children }: RootLayoutInnerProps) {
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
       <header>
-        <div
-          className="absolute left-0 right-0 top-2 z-40 pt-14"
-          aria-hidden={expanded ? 'true' : undefined}
-        >
+        <div className="absolute left-0 right-0 top-2 z-40 pt-14">
           <Header
             panelId={panelId}
             icon={MenuIcon}
@@ -199,7 +193,6 @@ function RootLayoutInner({ children }: RootLayoutInnerProps) {
           id={panelId}
           style={{ height: expanded ? 'auto' : '0.5rem' }}
           className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
-          aria-hidden={expanded ? undefined : 'true'}
         >
           <motion.div layout className="bg-neutral-800">
             <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">

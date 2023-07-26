@@ -10,9 +10,7 @@ export function Footer() {
           <div className="flex lg:justify-end">{/* <NewsletterForm /> */}</div>
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
-          <p className="text-sm text-neutral-700">
-            © Muhamad Taufiq Ramadhan
-          </p>
+          <p className="text-sm text-neutral-700">© Muhamad Taufiq Ramadhan</p>
         </div>
       </FadeIn>
     </Container>
