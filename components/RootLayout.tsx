@@ -26,7 +26,7 @@ interface IconProps {
 
 function XIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24" {...props}>
       <path d="m5.636 4.223 14.142 14.142-1.414 1.414L4.222 5.637z" />
       <path d="M4.222 18.363 18.364 4.22l1.414 1.414L5.636 19.777z" />
     </svg>
@@ -35,7 +35,7 @@ function XIcon(props: IconProps) {
 
 function MenuIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24" {...props}>
       <path d="M2 6h20v2H2zM2 16h20v2H2z" />
     </svg>
   );
@@ -65,7 +65,10 @@ function Header({
           <Image width={80} height={80} src="/logos.png" alt="" />
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
+          <Button
+            href="https://id.linkedin.com/in/mtaufiqramadhan"
+            invert={invert}
+          >
             Contact
           </Button>
           <button
@@ -229,7 +232,6 @@ function RootLayoutInner({ children }: RootLayoutInnerProps) {
           className="relative isolate flex w-full flex-col pt-9"
         >
           <main className="w-full flex-auto">{children}</main>
-
           <Footer />
         </motion.div>
       </motion.div>
