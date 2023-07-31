@@ -1,4 +1,4 @@
-import '@/styles/_globals.scss';
+import '@/styles/index.scss';
 
 import React from 'react';
 import clsx from 'clsx';
